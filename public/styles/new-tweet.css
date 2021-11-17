@@ -1,0 +1,36 @@
+.new-tweet{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#tweet-text{
+  width: 100%;
+  border-top: none;
+  border-bottom: 1px solid #000000;
+  border-right: none;
+  border-left: none;
+  background-color: rgb(241,250,247);
+}
+
+.tweet-button-style{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.btn-submit{
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+.mainDiv{
+  display: flex;
+    justify-content: space-around;
+  /* display: flex;
+  flex-direction: column;   */
+}
+.body-div{
+  display: flex;
+  flex-direction: column;
+}
+

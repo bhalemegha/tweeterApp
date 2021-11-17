@@ -1,29 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+  <!-- To use double down arrow on header-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-log.css" type="text/css" />
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <div>
+    <nav class="logoContainer sticky">
+      <div class="logo">
+        <div>tweeter</div>
+        <div class="logoText">Write a new tweet<i class="fas fa-angle-double-down"></i></div>
+      </div>
     </nav>
+    <header>
+      <div class="headerContent">
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div class="headerContent">
+        <h2>Ana</h2>
+      </div>
+    </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+    <div class="mainDiv">
+      <div id="main" class="main">
+        <main>
+          <section class="new-tweet">
+            <!--<h2>Compose Tweet</h2>-->
+            <div class="new-tweet">
+              <form action="/tweets/" method="post">
+                <label for="tweet-text">What are you humming about?</label>
+                <textarea name="text" id="tweet-text"></textarea>
+                <div class="tweet-button-style">
+                  <div><button type="submit" class="btn-submit logo">Tweet</button></div>
+                  <div> <output name="counter" class="counter" for="tweet-text">140</output></div>
+                </div>
+              </form>
+            </div>
+          </section>
+          <section id="tweet-container">
+            <!--<h2>Compose Tweet</h2>-->
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+<script type="text/javascript" src="/scripts/tweet-add.js"></script>
+
 </html>

@@ -1,0 +1,23 @@
+#tweet-container article{
+ border-style:'solid';
+ border-color:black;
+ display:'flex';
+ justify-content:'flex-start';
+}
+
+.usertweetDiv{
+  display:flex;
+  justify-content:space-around;
+}
+
+.iconsDivMain{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
+.dateDiv{
+  display:flex;
+  width:80%;
+  justify-content:flex-start;
+}

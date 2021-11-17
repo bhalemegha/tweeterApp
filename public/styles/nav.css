@@ -1,0 +1,35 @@
+nav{
+  height: 120px;
+  width: inherit;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.logo {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logoText{
+  display:flex;
+  justify-content: flex-end;
+}
+
+.headerContent{
+  display: flex;
+  justify-content: center;
+}
+.logoContainer{
+  z-index: 1;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
