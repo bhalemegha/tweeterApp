@@ -59,3 +59,12 @@ section article{
 .fa-heart:hover{
   color:yellow;
 }
+
+.fa-refresh{
+  color:blue;
+  padding-right: 15px;
+}
+
+.fa-refresh:hover{
+  color:yellow;
+}

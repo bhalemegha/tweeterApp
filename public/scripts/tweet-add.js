@@ -1,15 +1,24 @@
 $(document).ready(function () {
   const tweetContainer = document.querySelector('#tweet-container');
-  const textVal = "We can consider a tweet to be an article, and there's an HTML5 tag for that! You shouldn't use IDs within this component. Why not?"
+  const textVal = "We can consider a tweet to be an articleWe can consider a tweet to be an article, and there's an HTML5 tag for that! You shouldn't use IDs within this component. Why not?"
   const $container = $('<div>', {
     'class': 'tweet-txt',
     'style' : 'border-style: solid;'
   }).appendTo(tweetContainer);
 
-  $('<div>', {
-    'class': 'usertweetDiv',
-    'html': 'Megha'
+  const $tweetHandle = $('<div>', {
+    'class': 'usertweetDiv'
   }).appendTo($container);
+
+  $('<div>', {
+    'class': 'dateDiv',
+    'html': "Megha"
+  }).appendTo($tweetHandle);
+
+  $('<div>', {
+    'html': "Handle"
+  }).appendTo($tweetHandle);
+
 
   $('<article>', {
     'html': textVal
@@ -25,7 +34,7 @@ $(document).ready(function () {
   }).appendTo($iconsDivMain);
 
   $('<div>', {
-    'html': '<i class="fas fa-flag"></i><i class="fas fa-heart"></i>'
+    'html': '<i class="fas fa-flag"></i><i class="fa fa-refresh" aria-hidden="true"></i><i class="fas fa-heart"></i>'
   }).appendTo($iconsDivMain);
 
   // const $usrDiv = $('<div>').text("Megha");;
