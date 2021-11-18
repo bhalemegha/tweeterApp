@@ -4,31 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd"
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ]
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function (tweetData) {
     const usrName = tweetData["user"]["name"];
     const handle = tweetData["user"]["handle"];
@@ -43,17 +25,17 @@ $(document).ready(function () {
     //it will show user name
     $('<div>', {
       'class': 'dateDiv',
-      'html': usrName
+      'html': escape(usrName)
     }).appendTo($tweetHandle);
 
     //for handle
     $('<div>', {
-      'html': handle
+      'html': escape(handle)
     }).appendTo($tweetHandle);
 
     //tweet content
     $('<article>', {
-      'html': content
+      'html': escape(content)
     }).appendTo($container);
 
     //container to hold time ago and various icon like flag, heart and sync
@@ -64,7 +46,7 @@ $(document).ready(function () {
     //time ago div
     $('<div>', {
       'class': 'dateDiv',
-      'html': createdAt
+      'html': escape(createdAt)
     }).appendTo($iconsDivMain);
 
     //icons container
@@ -87,22 +69,23 @@ $(document).ready(function () {
   $( "form" ).on( "submit", function( event ) {
     event.preventDefault();
     let tweetData = $('textarea').first().val();
-    alert(tweetData.length);
     if (!tweetData) {//if no text
-      alert("Tweet Message should not be blank");
+      // $('#errorDiv').addClass('.c-error .c-validation');
+      // $('#errorDiv').text("Tweet Message should not be blank");
       return;
     }
     if (tweetData.length >= 140) {//check it it's too
       alert("tweet content is too long!!");
       return;
     }
+
     let tweetUrl = $( this ).attr('action');//getting form action
     tweetData = $(this).serialize();//adding form data to query string
-
     $.ajax({//sending post request
       type: "POST",
       url: tweetUrl,
-      data: tweetData
+      data: tweetData,
+      success:loadTweets()
     });
   });
 
@@ -116,4 +99,5 @@ $(document).ready(function () {
       renderTweets(data);
     }) 
   }
+ 
 });
