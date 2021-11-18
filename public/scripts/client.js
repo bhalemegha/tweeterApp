@@ -34,46 +34,50 @@ $(document).ready(function () {
     const handle = tweetData["user"]["handle"];
     const content = tweetData["content"]["text"];
     const createdAt = timeago.format(tweetData["created_at"]);
-    const tweetContainer = document.querySelector('#tweet-container');
-    const textVal = "We can consider a tweet to be an articleWe can consider a tweet to be an article, and there's an HTML5 tag for that! You shouldn't use IDs within this component. Why not?"
+
+    //tweet container per tweet
     const $container = $('<div class= "tweet-txt" style="border-style: solid;"></div>');
-    //$('tweet-container').append($container);
     const $tweetHandle = $('<div>', {
       'class': 'usertweetDiv'
     }).appendTo($container);
-    console.log("in function");
+    //it will show user name
     $('<div>', {
       'class': 'dateDiv',
       'html': usrName
     }).appendTo($tweetHandle);
 
+    //for handle
     $('<div>', {
       'html': handle
     }).appendTo($tweetHandle);
 
-
+    //tweet content
     $('<article>', {
       'html': content
     }).appendTo($container);
 
+    //container to hold time ago and various icon like flag, heart and sync
     $iconsDivMain = $('<div>', {
       'class': 'iconsDivMain'
     }).appendTo($container);
 
+    //time ago div
     $('<div>', {
       'class': 'dateDiv',
       'html': createdAt
     }).appendTo($iconsDivMain);
 
+    //icons container
     $('<div>', {
       'html': '<i class="fas fa-flag"></i><i class="fa fa-refresh" aria-hidden="true"></i><i class="fas fa-heart"></i>'
     }).appendTo($iconsDivMain);
     return $container;
   }
 
+  //To render tweets data, iterating through all tweets, creating element for it and append it section
   const renderTweets = function (tweets) {
-    for (let tweet in tweets) {
-      const $tweetEle = createTweetElement(tweets[tweet])
+    for (let tweet of tweets) {
+      const $tweetEle = createTweetElement(tweet)
       $('#tweet-container').append($tweetEle);
     }
   }
