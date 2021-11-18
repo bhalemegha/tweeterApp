@@ -83,4 +83,16 @@ $(document).ready(function () {
   }
 
   renderTweets(data);
+
+  $( "form" ).on( "submit", function( event ) {
+    event.preventDefault();
+    let tweetUrl = $( this ).attr('action');//getting form action
+    let tweetData = $(this).serialize();//adding form data to query string
+    $.ajax({//sending post request
+      type: "POST",
+      url: tweetUrl,
+      data: tweetData
+    });
+  });
+
 });
