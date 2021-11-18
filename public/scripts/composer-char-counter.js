@@ -5,7 +5,7 @@ $(document).ready(function() {
   const counterDiv = document.querySelector('div output');
   const maxCounterLen = $(counterDiv).val();//140 for now,
   $('textarea').keyup(function (event){
-    const inputTextLength = Number($(this).val().length);
+    const inputTextLength = $(this).val().length;
     if (inputTextLength > maxCounterLen) {
       $(counterDiv).css('color','red'); //max char turn in red color if text exceeds the limit 140(maxcounterLen)
     } 
