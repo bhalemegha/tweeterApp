@@ -15,6 +15,7 @@ $(document).ready(function () {
     const usrName = tweetData["user"]["name"];
     const handle = tweetData["user"]["handle"];
     const content = tweetData["content"]["text"];
+    const avataar = tweetData["user"]["avatars"];
     const createdAt = timeago.format(tweetData["created_at"]);
 
     //tweet container per tweet
@@ -23,10 +24,14 @@ $(document).ready(function () {
       'class': 'usertweetDiv'
     }).appendTo($container);
     //it will show user name
+    const $img = $('<img>', {
+      'src': escape(avataar)
+    }).appendTo($tweetHandle);
+
     $('<div>', {
       'class': 'dateDiv',
       'html': escape(usrName)
-    }).appendTo($tweetHandle);
+    }).appendTo($img);
 
     //for handle
     $('<div>', {
@@ -70,12 +75,13 @@ $(document).ready(function () {
     event.preventDefault();
     let tweetData = $('textarea').first().val();
     if (!tweetData) {//if no text
-      // $('#errorDiv').addClass('.c-error .c-validation');
-      // $('#errorDiv').text("Tweet Message should not be blank");
+      $('#errorDiv').text("Tweet text should not be blank!");
+      $('#errorDiv').show();
       return;
     }
     if (tweetData.length >= 140) {//check it it's too
-      alert("tweet content is too long!!");
+      $('#errorDiv').text("Tweet text is too long!!");
+      $('#errorDiv').show();
       return;
     }
 
