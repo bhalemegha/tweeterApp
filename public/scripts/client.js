@@ -61,12 +61,18 @@ $(document).ready(function () {
     return $container;
   }
 
+  const clearTextArea = function() {
+    $('textarea').val("");
+    $('div output').text(140);
+  }
+
   //To render tweets data, iterating through all tweets, creating element for it and append it section
   const renderTweets = function (tweets) {
     for (let tweet of tweets) {
       const $tweetEle = createTweetElement(tweet)
       $('#tweet-container').append($tweetEle);
     }
+    clearTextArea();
   }
 
   //renderTweets(data);
