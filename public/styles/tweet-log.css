@@ -36,6 +36,7 @@ div .tweet-txt{
 
 section article{
   padding-left: 10px;
+  word-break: break-word;
 }
 
 .iconsContainer{
@@ -60,11 +61,16 @@ section article{
   color:yellow;
 }
 
-.fa-refresh{
+.fa-retweet{
   color:blue;
-  padding-right: 15px;
+  padding-right: 10px;
 }
 
-.fa-refresh:hover{
+.fa-retweet:hover{
   color:yellow;
 }
+
+/* @media only screen and (min-width: 1024px) {
+ 
+  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond 
+} */

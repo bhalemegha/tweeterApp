@@ -4,7 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
-
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
@@ -42,40 +42,43 @@
         <div class="logoText">Write a new tweet<button><i class="fas fa-angle-double-down"></i></button></div>
       </div>
     </nav>
-    <header>
-      <div class="headerContent">
-        <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div class="headerContent">
-        <h2>Ana</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <div class="mainDiv">
-      <div id="main" class="main">
-        <main>
-          <section class="new-tweet">
-            <div>
-              <div id="errorDiv"></div>
-            <!--<h2>Compose Tweet</h2>-->
-            <div class="new-tweet">
-              <form action="/tweets/" method="post">
-                <label for="tweet-text">What are you humming about?</label>
-                <textarea name="text" id="tweet-text"></textarea>
-                <div class="tweet-button-style">
-                  <div><button type="submit" class="btn-submit logo">Tweet</button></div>
-                  <div> <output name="counter" class="counter" for="tweet-text">140</output></div>
-                </div>
-              </form>
-            </div>
+    <div id="flexDiv">
+      <div>
+        <header>
+          <div class="headerContent">
+            <img src="/images/profile-hex.png">
           </div>
-          </section>
-          <section id="tweet-container">
-            <!--<h2>Compose Tweet</h2>-->
-          </section>
-        </main>
+          <div class="headerContent">
+            <h2>Ana</h2>
+          </div>
+        </header>
+      </div>
+      <!-- Page-specific (main) content here -->
+      <div class="mainDiv">
+        <div id="main" class="main">
+          <main>
+            <section class="new-tweet">
+              <div>
+                <div id="errorDiv"></div>
+                <!--<h2>Compose Tweet</h2>-->
+                <div class="new-tweet">
+                  <form action="/tweets/" method="post">
+                    <label for="tweet-text">What are you humming about?</label>
+                    <textarea name="text" id="tweet-text"></textarea>
+                    <div class="tweet-button-style">
+                      <div><button type="submit" class="btn-submit logo">Tweet</button></div>
+                      <!-- Character counter -->
+                      <div> <output name="counter" class="counter" for="tweet-text">140</output></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
+            <section id="tweet-container">
+              <!--<h2>Tweet Container</h2>-->
+            </section>
+          </main>
+        </div>
       </div>
     </div>
   </div>

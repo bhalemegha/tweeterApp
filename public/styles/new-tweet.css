@@ -12,7 +12,7 @@
   border-left: none;
   background-color: rgb(241,250,247);
 }
-
+/* tweet button  */
 .tweet-button-style{
   display: flex;
   flex-direction: row;
@@ -34,6 +34,7 @@
   flex-direction: column;
 }
 
+/* style for errors */
 #errorDiv{
   color:red;
   display:none;

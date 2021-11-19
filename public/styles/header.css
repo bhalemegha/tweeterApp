@@ -1,8 +1,9 @@
 header{
-  height: 400px;
+  /* height: 400px; */
   width: auto;
   background-image: url("/images/absurdity-851x315.png");
   display: flex;
   justify-content: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  padding-top: 5em;
 }
