@@ -25,7 +25,7 @@ $(document).ready(function() {
     }).appendTo($container);
 
     //To add Avataar
-    const $img = $('<img>', {
+    $('<img>', {
       'src': escape(avataar)
     }).appendTo($tweetHandle);
 
