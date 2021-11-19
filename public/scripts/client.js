@@ -72,7 +72,9 @@ $(document).ready(function() {
 
   //To render tweets data, iterating through all tweets, creating element for it and append it section
   const renderTweets = function(tweets) {
-    for (let tweet of tweets) {
+    $('#tweet-container').html("");
+    const revData = tweets.reverse();
+    for (let tweet of revData) {
       const $tweetEle = createTweetElement(tweet);
       $('#tweet-container').append($tweetEle);
     }
