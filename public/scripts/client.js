@@ -58,7 +58,7 @@ $(document).ready(function() {
 
     //flag, heart and sync icons container
     $('<div>', {
-      'html': '<i class="fas fa-flag"></i><i class="fa fa-refresh" aria-hidden="true"></i><i class="fas fa-heart"></i>'
+      'html': '<i class="fas fa-flag"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fas fa-heart"></i>'
     }).appendTo($iconsDivMain);
     return $container;
   };
