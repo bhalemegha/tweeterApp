@@ -21,6 +21,9 @@
 .btn-submit{
   background-color: #4056A1;
   color: #FFFFFF;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  margin : 0em;
 }
 
 .mainDiv{
@@ -33,6 +36,10 @@
   display: flex;
   flex-direction: column;
 }
+
+/* .tweetHandleDiv{
+  padding-right: .3em;
+} */
 
 /* style for errors */
 #errorDiv{

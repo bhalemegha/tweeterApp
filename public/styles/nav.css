@@ -5,6 +5,7 @@ nav{
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
+  padding-top: 1.5em;
 }
 
 .logo {
@@ -18,7 +19,9 @@ nav{
 
 .logoText{
   display:flex;
+  flex-direction: column;
   justify-content: flex-end;
+  
 }
 
 .headerContent{
@@ -36,5 +39,12 @@ nav{
 }
 
 .fa-angle-double-down{
-  color:blue;
+  color: red;
+}
+
+.arrow-btn{
+  width: 2em;
+  align-self: center;
+  background-color: transparent;
+  border: none;
 }
