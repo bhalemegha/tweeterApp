@@ -81,7 +81,19 @@ $(document).ready(function() {
     clearTextArea();
   };
 
-  //renderTweets(data);
+  //fetching tweets
+  const loadTweets = function() {
+    const url = "/tweets/";
+    $.ajax({
+      url: url,
+      method: "GET"
+    })
+      .then((data) => {
+        renderTweets(data);
+      });
+  };
+  //to load existing tweets on first visit
+  loadTweets();
 
   $("form").on("submit", function(event) {
     //To prevent default behaviour of browser once form has been submitted.
@@ -94,6 +106,7 @@ $(document).ready(function() {
       $('#errorDiv').show();
       return;
     }
+
     //check it it's longer than limit(140 for now)
     if (tweetData.length > 140) {
       $('#errorDiv').text("Tweet text is too long!!");
@@ -113,18 +126,4 @@ $(document).ready(function() {
       success:loadTweets()
     });
   });
-
-  //fetching tweets
-  const loadTweets = function() {
-    const url = "/tweets/";
-    $.ajax({
-      url: url,
-      method: "GET"
-    })
-      .then((data) => {
-        renderTweets(data);
-      });
-  };
-
-  loadTweets();
 });
